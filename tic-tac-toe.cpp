@@ -36,3 +36,36 @@ void display(vector<vector<int>> & matrix){
         cout<<endl;
     }
 }
+
+void playGame(vector<vector<int>> & matrix, int turn){
+    
+    while(isWin(matrix)==false && isFull(matrix)==false){
+        display(matrix);
+        cout<<"player "<<turn<<" turns"<<endl;
+        int x = 0;
+        int y = 0;
+         cout<<"enter row between 0 -2"<<endl;
+              cin>>x;
+            cout<<"enter col between 0 -2"<<endl;
+            cin>>y;
+        while(x<0 || y<0 || x>=3 || y>=3 || matrix[x][y]!=0){
+            cout<<"Wrong input enter again check if matrix is not filled"<<endl;
+            cout<<"player"<<"  "<<turn<<"enter again"<<endl;
+            cout<<"enter row between 0 -2"<<endl;
+              cin>>x;
+            cout<<"enter col between 0 -2"<<endl;
+            cin>>y;
+        }
+        cout<<"here"<<endl;
+        matrix[x][y] = turn;
+        if(isWin(matrix)){
+            cout<<endl<<endl;
+         if(turn==1)cout<<"player 1 wins";
+         else cout<<"player 2 wins";
+         return ; 
+        }
+        if(turn==1)turn=2;
+        else if(turn==2)turn = 1;
+    }
+    
+}
