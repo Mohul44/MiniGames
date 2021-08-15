@@ -18,3 +18,12 @@ bool isWin(vector<vector<int>> & matrix){
     if(matrix[0][2]!=0 && matrix[0][2]==matrix[1][1] && matrix[1][1]==matrix[2][0])return true;
     return false;
 }
+
+bool isFull(vector<vector<int>> matrix){
+    for(auto x : matrix){
+        for(auto y : x){
+            if(y==0)return false;
+        }
+    }
+    return true;
+}
