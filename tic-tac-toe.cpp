@@ -27,3 +27,12 @@ bool isFull(vector<vector<int>> matrix){
     }
     return true;
 }
+
+void display(vector<vector<int>> & matrix){
+    for(auto x : matrix){
+        for(auto y : x){
+            cout<<y<<" ";
+        }
+        cout<<endl;
+    }
+}
