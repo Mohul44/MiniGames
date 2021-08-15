@@ -68,4 +68,11 @@ void playGame(vector<vector<int>> & matrix, int turn){
         else if(turn==2)turn = 1;
     }
     
+}   
+
+int main()
+{
+    vector<vector<int>> matrix(n,vector<int>(m,0));
+    playGame(matrix,1);
+    return 0;
 }
